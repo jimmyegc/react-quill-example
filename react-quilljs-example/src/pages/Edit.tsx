@@ -9,9 +9,46 @@ export const Edit = () => {
   const navigate = useNavigate()
   const params = useParams()
   const [title, setTitle] = useState("");
+
+  const quillImageCallback = async () => {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+    input.click();
+
+    input.onchange = async () => {
+      const file = input.files ? input.files[0] : null;
+      let data = null;
+      const formData = new FormData();
+
+      const quillObj = quillRef?.current?.getEditor();
+      const range = quillObj?.getSelection();
+
+      if (file) {
+        formData.append('file', file);
+        formData.append('resource_type', 'raw');
+
+        const responseUpload = await fetch(
+          `${process.env.NEXT_PUBLIC_IMAGE_UPLOAD}/upload`,
+          { method: 'POST', body: formData }
+        );
+
+        data = await responseUpload.json();
+        if (data.error) {
+          console.error(data.error);
+        }
+
+        quillObj.editor.insertEmbed(range.index, 'image', data?.secure_url);
+      }
+    };
+  };
+
   const { quill, quillRef } = useQuill({
     modules: {
-      toolbar
+      toolbar,
+      handlers: {
+        image: quillImageCallback
+      }
     }
   });
 
@@ -27,6 +64,7 @@ export const Edit = () => {
       getNote()
     }
   }, [params.id, quill])
+
 
 
   const handleSubmit = async (e) => {
