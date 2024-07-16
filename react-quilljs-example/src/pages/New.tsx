@@ -11,7 +11,9 @@ export const New = () => {
   const { quill, quillRef } = useQuill({
     modules: {
       toolbar
-    }
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'
   });
 
   const handleSubmit = async (e) => {
@@ -52,7 +54,7 @@ export const New = () => {
           <div ref={quillRef} />
 
         </div>
-        <button className='rounded-xl bg-blue-500 text-white py-2 px-6 m-2 hover:bg-blue-700'>Enviar</button>
+        <button className='bg-blue-500 text-white py-2 px-6 m-2 hover:bg-blue-700'>Enviar</button>
       </form>
     </>
   );

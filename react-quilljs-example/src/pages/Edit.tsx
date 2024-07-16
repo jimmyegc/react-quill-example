@@ -11,6 +11,11 @@ export const Edit = () => {
   const [title, setTitle] = useState("");
 
   const quillImageCallback = async () => {
+
+    /**
+      * Step1. select local image
+      *
+      */
     const input = document.createElement('input');
     input.setAttribute('type', 'file');
     input.setAttribute('accept', 'image/*');
@@ -23,7 +28,7 @@ export const Edit = () => {
 
       const quillObj = quillRef?.current?.getEditor();
       const range = quillObj?.getSelection();
-
+      console.log(file)
       if (file) {
         formData.append('file', file);
         formData.append('resource_type', 'raw');
@@ -35,21 +40,27 @@ export const Edit = () => {
 
         data = await responseUpload.json();
         if (data.error) {
-          console.error(data.error);
+          console.error("ERROR responseUpload:", data.error);
         }
-
+        console.log("data", data)
         quillObj.editor.insertEmbed(range.index, 'image', data?.secure_url);
       }
     };
   };
 
   const { quill, quillRef } = useQuill({
+    bounds: '#quill-editor',
+    theme: 'snow',
     modules: {
-      toolbar,
-      handlers: {
-        image: quillImageCallback
-      }
-    }
+      //toolbar,
+      toolbar: {
+        container: toolbar,
+        handlers: {
+          image: quillImageCallback
+        }
+      },
+
+    },
   });
 
 
@@ -87,6 +98,7 @@ export const Edit = () => {
     }
   }
 
+
   return (
     <>
       <h1>Editar nota</h1>
@@ -99,7 +111,7 @@ export const Edit = () => {
           <div ref={quillRef}>
           </div>
         </div>
-        <button>Enviar</button>
+        <button className='bg-blue-500 text-white py-2 px-6 m-2 hover:bg-blue-700'>Guardar</button>
       </form>
     </>
   )

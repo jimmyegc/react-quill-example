@@ -12,26 +12,31 @@ export const View = () => {
     }
   })
 
+  const getNote = async () => {
+    const response = await fetch(`http://localhost:3001/${params.id}`)
+    const note = await response.json()
+    quill?.setContents(JSON.parse(note.content))
+    setTitle(note.title)
+  }
+
   useEffect(() => {
-    const getNote = async () => {
-      const response = await fetch(`http://localhost:3001/${params.id}`)
-      const note = await response.json()
-      quill?.setContents(JSON.parse(note.content))
-      setTitle(note.title)
-    }
+
     if (quill) {
       getNote()
     }
   }, [params.id, quill])
 
   return (
-    <>
-      <h1>Ver nota</h1>
-      <p>{title}</p>
-      <div className="w-3/4">
+    <div className="w-3/4">
+      <h1 className="text-xl text-center font-semibold">Ver nota</h1>
+      <p className="text-center text-lg">{title}</p>
+      <div className="w-3/4 mx-auto ">
         <article ref={quillRef}></article>
       </div>
-      <Link to={`/${params.id}/edit`}>Editar</Link>
-    </>
+      <Link to={`/${params.id}/edit`}
+        className="inline-block bg-blue-500 text-white py-2 px-6 m-2 hover:bg-blue-700"
+      >Editar</Link>
+
+    </div>
   )
 }
