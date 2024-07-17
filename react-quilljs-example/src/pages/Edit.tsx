@@ -1,14 +1,18 @@
-
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuill } from 'react-quilljs';
+//import ReactQuill from "react-quill";
 import 'quill/dist/quill.snow.css';
 import { toolbar } from '../quill/toolbar'
+
+
 
 export const Edit = () => {
   const navigate = useNavigate()
   const params = useParams()
   const [title, setTitle] = useState("");
+  const [value, setValue] = useState('');
+
 
   const quillImageCallback = async () => {
 
@@ -48,20 +52,28 @@ export const Edit = () => {
     };
   };
 
-  const { quill, quillRef } = useQuill({
-    bounds: '#quill-editor',
+
+  const { quill, quillRef, Quill } = useQuill({
+    bounds: '#editor',
     theme: 'snow',
     modules: {
-      //toolbar,
-      toolbar: {
+      toolbar: '#toolbar',
+      /* toolbar: {
         container: toolbar,
         handlers: {
           image: quillImageCallback
         }
-      },
+      }, */
 
     },
   });
+
+
+  const font = Quill.import('formats/font');
+  font.whitelist = ['Ubuntu', 'Raleway', 'Roboto'];
+  Quill.register(font, true);
+
+
 
 
   useEffect(() => {
@@ -102,6 +114,24 @@ export const Edit = () => {
   return (
     <>
       <h1>Editar nota</h1>
+
+      <div id="toolbar">
+
+        <select class="ql-size">
+          <option value="small"></option>
+
+          <option selected></option>
+          <option value="large"></option>
+          <option value="huge"></option>
+        </select>
+
+        <button class="ql-bold"></button>
+
+        <button class="ql-script" value="sub"></button>
+        <button class="ql-script" value="super"></button>
+      </div>
+      <div id="editor"></div>
+
       <form onSubmit={handleSubmit}>
         <label htmlFor='title'>Título:</label>
         <input type='text' placeholder='titulo' id='value'

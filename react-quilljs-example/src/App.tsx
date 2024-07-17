@@ -5,6 +5,7 @@ import { Main } from './pages/Main'
 import { View } from './pages/View'
 import { Edit } from './pages/Edit'
 import { New } from './pages/New'
+import { Test } from './pages/Test'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/new" element={<New />} />
         </Routes>
       </BrowserRouter>
+      <Test />
     </>
   )
 }
