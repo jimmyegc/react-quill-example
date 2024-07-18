@@ -1,0 +1,14 @@
+/*@mixin ql-font($font-name) {
+  .ql-font-#{$font-name} {
+    @apply font-#{$font-name};
+  }
+
+  span[data-value="#{$font-name}"]::before {
+    @apply capitalize;
+    content: "#{$font-name}" !important;
+  }
+}
+
+// Usage example
+@include ql-font("roboto");
+*/
