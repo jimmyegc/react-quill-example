@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  background: #f3f1f2;
+  font-family: sans-serif;
+}
+
+.app {
+  margin: 1rem 4rem;
+}
+
+.app .ql-container {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background: #fefcfc;
+}
+
+/*  Set default font-family */
+.app .ql-editor {
+  font-family: "Ubuntu";
+  margin: 1rem 4rem;
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Ubuntu"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Ubuntu"]::before {
+  font-family: "Ubuntu", cursive;
+  content: "Ubuntu";
+}
+
+.ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before {
+  font-family: "Roboto", cursive;
+  content: "Roboto";
+}
+
+/* Set content font-families */
+.ql-font-Raleway {
+  font-family: "Raleway";
+}
+.ql-font-Roboto {
+  font-family: "Roboto", sans-serif;
+}
