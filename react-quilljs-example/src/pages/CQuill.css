@@ -106,6 +106,11 @@
   content: "Times New Roman";
   font-family: "Times New Roman";
 }
+.ql-picker.ql-font .ql-picker-label[data-value="open-sans"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="open-sans"]::before {
+  content: "Open Sans";
+  font-family: "Open Sans", sans-serif;
+}
 /* Set content font-families */
 .ql-font-Ubuntu {
   font-family: "Ubuntu";
@@ -133,6 +138,9 @@
 }
 .ql-font-times-new-roman {
   font-family: "Times New Roman";
+}
+.ql-font-open-sans {
+  font-family: "Open Sans", sans-serif;
 }
 /* We do not set Courier since it is the default font */
 

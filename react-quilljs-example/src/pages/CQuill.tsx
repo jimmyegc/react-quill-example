@@ -8,7 +8,7 @@ export const CQuill = () => {
 
   // Custom Fonts
   const Font = ReactQuill.Quill.import('formats/font');
-  Font.whitelist = ['Ubuntu', 'Raleway', 'Roboto', 'Comic', 'Serif', 'Monospace', 'ArefRuqaa', 'Mirza', 'Arial', 'times-new-roman'];
+  Font.whitelist = ['Ubuntu', 'Raleway', 'Roboto', 'Comic', 'Monospace', 'ArefRuqaa', 'Mirza', 'Arial', 'times-new-roman', 'open-sans'];
   ReactQuill.Quill.register(Font, true);
   // Size Fonts
   const Size = ReactQuill.Quill.import('attributors/style/size');
