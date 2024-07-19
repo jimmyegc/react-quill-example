@@ -23,7 +23,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       {/* <Test /> */}
-      {/* <CQuill /> */}
+      <CQuill />
       <QuillJs />
     </>
   )

@@ -1,0 +1,175 @@
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="8px"]::before {
+  content: "8";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="9px"]::before {
+  content: "9";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="10px"]::before {
+  content: "10";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="11px"]::before {
+  content: "11";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="12px"]::before {
+  content: "12";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
+  content: "14";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
+  content: "18";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="24px"]::before {
+  content: "24";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="30px"]::before {
+  content: "30";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="36px"]::before {
+  content: "36";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="48px"]::before {
+  content: "48";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="60px"]::before {
+  content: "60";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="72px"]::before {
+  content: "72";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="96px"]::before {
+  content: "96";
+  font-size: 14px !important;
+}
+
+/* Set default font-family */
+.app .ql-editor {
+  font-family: "Ubuntu";
+}
+
+/* Set dropdown font-families */
+.ql-picker.ql-font .ql-picker-label[data-value="Ubuntu"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Ubuntu"]::before {
+  font-family: "Ubuntu", cursive;
+  content: "Ubuntu";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Raleway"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Raleway"]::before {
+  font-family: "Raleway", cursive;
+  content: "Raleway";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before {
+  font-family: "Roboto", cursive;
+  content: "Roboto";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Comic"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Comic"]::before {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  content: "Comic Sans";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Monospace"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Monospace"]::before {
+  font-family: "Monospace";
+  content: "Monospace";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="ArefRuqaa"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="ArefRuqaa"]::before {
+  font-family: "Aref Ruqaa";
+  content: "Aref Ruqaa";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Mirza"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Mirza"]::before {
+  font-family: "Mirza";
+  content: "Mirza";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="Arial"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Arial"]::before {
+  font-family: "Arial";
+  content: "Arial";
+}
+.ql-picker.ql-font .ql-picker-label[data-value="times-new-roman"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="times-new-roman"]::before {
+  content: "Times New Roman";
+  font-family: "Times New Roman";
+}
+/* Set content font-families */
+.ql-font-Ubuntu {
+  font-family: "Ubuntu";
+}
+.ql-font-Raleway {
+  font-family: "Raleway";
+}
+.ql-font-Roboto {
+  font-family: "Roboto";
+}
+.ql-font-Comic {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.ql-font-Monospace {
+  font-family: "Monospace";
+}
+.ql-font-ArefRuqaa {
+  font-family: "Aref Ruqaa";
+}
+.ql-font-Mirza {
+  font-family: "Mirza";
+}
+.ql-font-Arial {
+  font-family: "Arial";
+}
+.ql-font-times-new-roman {
+  font-family: "Times New Roman";
+}
+/* We do not set Courier since it is the default font */
+
+body {
+  background: #f3f1f2;
+  font-family: sans-serif;
+}
+
+.app {
+  margin: 1rem 4rem;
+}
+
+.app .ql-container {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  background: #fefcfc;
+}
+
+/* Snow Theme */
+.app .ql-snow.ql-toolbar {
+  display: block;
+  background: #eaecec;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+/* Bubble Theme */
+.app .ql-bubble .ql-editor {
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+.app .ql-editor {
+  min-height: 18em;
+}
+
+.themeSwitcher {
+  margin-top: 0.5em;
+  font-size: small;
+}

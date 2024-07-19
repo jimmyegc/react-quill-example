@@ -30,7 +30,7 @@ export const QuillJs = () => {
 
   return (<>
     <h2>QuillJs</h2>
-    <div style={{ width: 500, height: 300 }}>
+    <div style={{ width: '100%', height: 300 }}>
       <div ref={quillRef} />
       <div id="toolbar">
         <select className="ql-font">
