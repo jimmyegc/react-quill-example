@@ -6,8 +6,8 @@ import { View } from './pages/View'
 import { Edit } from './pages/Edit'
 import { New } from './pages/New'
 import { Test } from './pages/Test'
-import { CQuill } from './pages/CQuill'
-import { QuillJs } from './pages/QuillJs'
+import { CQuill } from './pages/Quill/CQuill'
+import { QuillJs } from './pages/QuillJs/QuillJs'
 
 function App() {
 
