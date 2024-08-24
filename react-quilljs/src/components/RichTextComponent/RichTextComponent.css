@@ -1,63 +1,6 @@
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="8px"]::before {
-  content: "8";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="9px"]::before {
-  content: "9";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="10px"]::before {
-  content: "10";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="11px"]::before {
-  content: "11";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="12px"]::before {
-  content: "12";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
-  content: "14";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
-  content: "18";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="24px"]::before {
-  content: "24";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="30px"]::before {
-  content: "30";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="36px"]::before {
-  content: "36";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="48px"]::before {
-  content: "48";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="60px"]::before {
-  content: "60";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="72px"]::before {
-  content: "72";
-  font-size: 14px !important;
-}
-.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="96px"]::before {
-  content: "96";
-  font-size: 14px !important;
-}
-
 /* Set default font-family */
 .app .ql-editor {
-  font-family: "Ubuntu";
+  font-family: "Aref Ruqaa";
 }
 
 /* Set dropdown font-families */
@@ -144,14 +87,73 @@
   font-family: "Open Sans", sans-serif;
 }
 
-/* We do not set Courier since it is the default font */
-body {
-  /* background: #f3f1f2; */
-  font-family: sans-serif;
+/* font-size */
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="8px"]::before {
+  content: "8";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="9px"]::before {
+  content: "9";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="10px"]::before {
+  content: "10";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="11px"]::before {
+  content: "11";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="12px"]::before {
+  content: "12";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"]::before {
+  content: "14";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"]::before {
+  content: "18";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="24px"]::before {
+  content: "24";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="30px"]::before {
+  content: "30";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="36px"]::before {
+  content: "36";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="48px"]::before {
+  content: "48";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="60px"]::before {
+  content: "60";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="72px"]::before {
+  content: "72";
+  font-size: 14px !important;
+}
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="96px"]::before {
+  content: "96";
+  font-size: 14px !important;
 }
 
+/* We do not set Courier since it is the default font 
+body {
+  background: #f3f1f2;
+  font-family: sans-serif;
+}
+*/
+
 .app {
-  margin: 0.5rem 2rem;
+  margin: 0.5rem 2rem;  
 }
 
 .app .ql-container {
@@ -183,7 +185,7 @@ body {
   font-size: small;
 }
 
-/**/
+/* theme */
 .quill > * {
   border-color: inherit !important;
   color: inherit !important;

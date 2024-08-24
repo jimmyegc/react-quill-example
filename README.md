@@ -11,3 +11,8 @@ https://www.npmjs.com/package/react-quilljs
 
 Upload image
 https://github.com/slab/quill/issues/1089
+
+# Modules
+
+https://www.npmjs.com/package/quill-resize-image
+https://github.com/kensnyder/quill-image-resize-module

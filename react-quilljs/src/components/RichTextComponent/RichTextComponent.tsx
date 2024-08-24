@@ -27,7 +27,7 @@ export const RichTextComponent = ({
   className,
 }: RichTextComponent) => {
   const [value, setValue] = useState("");
-  const { quillRef, modules, noModules } = useRichText();
+  const { quillRef, modules, noToolbar } = useRichText();
 
   return (
     <>      
@@ -37,7 +37,7 @@ export const RichTextComponent = ({
         theme="snow"
         onChange={setValue}
         value={value}
-        modules={isPreview ? noModules : modules}
+        modules={isPreview ? noToolbar : modules}        
         readOnly={isPreview}
         preserveWhitespace
         placeholder={placeholder}
