@@ -58,7 +58,7 @@ export const useRichText = () => {
       return input;
     };
 
-    const handleFileChange = async (event) => {
+    const handleFileChange= async (event: any) => {
       const file = event.target.files?.[0];
       if (file) {
         const url = await uploadToCloudinary(file);

@@ -1,6 +1,6 @@
 /* Set default font-family */
 .app .ql-editor {
-  font-family: "Aref Ruqaa";
+  font-family: "Aref Ruqaa";  
 }
 
 /* Set dropdown font-families */
@@ -145,7 +145,8 @@
   font-size: 14px !important;
 }
 
-/* We do not set Courier since it is the default font 
+/* We do not set Courier since it is the default font */
+/*
 body {
   background: #f3f1f2;
   font-family: sans-serif;
@@ -187,7 +188,7 @@ body {
 
 /* theme */
 .quill > * {
-  border-color: inherit !important;
+  /* border-color: inherit !important; */
   color: inherit !important;
 }
 .quill > .ql-toolbar {
