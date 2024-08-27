@@ -146,12 +146,11 @@
 }
 
 /* We do not set Courier since it is the default font */
-/*
+
 body {
   background: #f3f1f2;
   font-family: sans-serif;
 }
-*/
 
 .app {
   margin: 0.5rem 2rem;  
@@ -227,3 +226,35 @@ body {
   /* for dropdown */
   color: #444 !important;
 }
+
+
+.ql-align-center {  
+  justify-content: center;
+}
+
+.ql-align-right { 
+  justify-content: end;
+}
+
+.ql-align-justify {
+  justify-content: justify;
+}
+
+/*
+.toolbar {
+  border-radius: 10px 10px 0 0;
+  height: 200px;
+  background-color: red !important;
+}
+.group {
+  display: flex;
+  background-color: yellow;
+}
+
+.btn {
+  background-color: blue;
+  color: red !important;
+  width: 500px !important;
+  display: flex;
+}
+*/

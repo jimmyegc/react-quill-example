@@ -1,10 +1,12 @@
 import { useCallback, useRef } from "react";
 // Quill
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import QuillResizeImage from 'quill-resize-image';
+//import QuillResizeImage from 'quill-resize-image';
+import ImageResize from 'quill-image-resize-custom-module'
 import uploadToCloudinary from "./upload";
-const Quill = ReactQuill.Quill;
+
+//const Quill = ReactQuill.Quill;
 
 // Custom Fonts
 const Font = Quill.import("formats/font");
@@ -45,10 +47,12 @@ Size.whitelist = fontSizeArr;
 Quill.register(Size, true);
 
 // Resize Image
-Quill.register("modules/resize", QuillResizeImage);
+//Quill.register("modules/resize", QuillResizeImage);
+Quill.register('modules/imageResize', ImageResize);
+
 
 export const useRichText = () => {
-  const quillRef = useRef<ReactQuill>(null);  
+  const quillRef = useRef<ReactQuill>();  
   const imageHandler = useCallback(() => {
     
     const createFileInput = () => {
@@ -99,11 +103,14 @@ export const useRichText = () => {
         ["link", "image"],
         ["clean"],      
       ],
-      handlers: {
-        image: imageHandler        
-      }, 
-    },
-    resize: {
+      //handlers: { image: imageHandler }, 
+    },    
+    imageResize: {
+      parchment: Quill.import('parchment'),
+      modules: ['Resize', 'DisplaySize']
+   },
+    /* resize: {
+
       locale: {         
         floatLeft: "izquierda",
         floatRight: "derecha",
@@ -112,7 +119,7 @@ export const useRichText = () => {
         altTip: "¡Mantenga presionada la tecla Alt para bloquear la relación!",
         inputTip: "¡Presione la tecla Enter para aplicar el cambio!"        
       },
-    }, 
+    },  */
   }; 
   
   const noToolbar = {
