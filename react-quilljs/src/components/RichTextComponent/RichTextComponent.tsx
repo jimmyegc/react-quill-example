@@ -31,17 +31,19 @@ export const RichTextComponent = ({
   data,
   title,
 }: RichTextComponent) => {
-  
+  console.log(data)
   const { quillRef, modules, formats, noToolbar } = useRichText();
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState<any>();
   const [search, setSearch] = useSearchDebounce();
 
   const handleChange = () => {
-    if (isLoaded) {
-      setValue(quillRef?.current.getEditor().getContents());
-      setSearch(quillRef?.current.getEditor().getContents());
+    if(isLoaded && quillRef.current) {
+      if(quillRef.current != null){
+        setValue(quillRef?.current.getEditor().getContents());
+        setSearch(quillRef?.current.getEditor().getContents());
+      }
     }
   };
 
@@ -49,20 +51,22 @@ export const RichTextComponent = ({
     const data = localStorage.getItem("data")
     if (!isLoaded && data != undefined) {
       setValue(JSON.parse(data));
-      quillRef?.current.getEditor().setContents(JSON.parse(data));
+      if(quillRef.current) quillRef?.current.getEditor().setContents(JSON.parse(data));
     }
     setIsLoaded(true);
   }
 
   const handleSave = () => {
-    const richtextContent = quillRef.current.getEditor().getContents();
-    console.log(richtextContent)
-    localStorage.setItem("data", JSON.stringify(richtextContent))
+    if(quillRef.current !=undefined) {
+      const richtextContent = quillRef?.current.getEditor().getContents();
+      console.log(richtextContent)
+      localStorage.setItem("data", JSON.stringify(richtextContent))
+   }
   }
 
   useEffect(() => {
     if (search != null && isLoaded) {
-      handleSave();
+      if(quillRef.current) handleSave();
     }
   }, [search]);
   

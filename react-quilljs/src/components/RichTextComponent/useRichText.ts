@@ -1,14 +1,15 @@
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 // Quill
-import ReactQuill, { Quill } from "react-quill";
+import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 //import QuillResizeImage from 'quill-resize-image';
 //import ImageResize from 'quill-image-resize-custom-module'
 
 import { ImageActions } from "@xeger/quill-image-actions";
 import { ImageFormats } from "@xeger/quill-image-formats";
-import uploadToCloudinary from "./upload";
-//const Quill = ReactQuill.Quill;
+//import uploadToCloudinary from "./upload";
+
+const Quill = ReactQuill.Quill;
 
 // Custom Fonts
 const Font = Quill.import("formats/font");
@@ -56,7 +57,7 @@ Quill.register("modules/imageFormats", ImageFormats);
 
 export const useRichText = () => {
   const quillRef = useRef<ReactQuill>(null);  
-  const imageHandler = useCallback(() => {
+  /*const imageHandler = useCallback(() => {
     
     const createFileInput = () => {
       const input = document.createElement("input");
@@ -82,7 +83,7 @@ export const useRichText = () => {
     const input = createFileInput();
     input.addEventListener("change", handleFileChange);
     input.click();
-  }, []);
+  }, []); */
   
   const modules = {    
     toolbar: {

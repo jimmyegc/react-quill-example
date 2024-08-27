@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 export const useSearchDebounce = (delay = 350) => {
-    const [search, setSearch] = useState(null);
-    const [searchQuery, setSearchQuery] = useState(null);
+    const [search, setSearch] = useState<any>(undefined);
+    const [searchQuery, setSearchQuery] = useState<any>(undefined);
   
     useEffect(() => {
       const delayFn = setTimeout(() => setSearch(searchQuery), delay);
