@@ -81,7 +81,8 @@ export const RichTextComponent = ({
           theme="snow"
           onChange={handleChange}
           value={value}
-          modules={isPreview ? noToolbar : modules}                  
+          modules={isPreview ? noToolbar : modules}             
+          formats={formats}      
           readOnly={isPreview}
           preserveWhitespace
           placeholder={placeholder}

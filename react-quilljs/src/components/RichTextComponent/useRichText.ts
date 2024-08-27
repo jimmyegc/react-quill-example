@@ -3,9 +3,11 @@ import { useCallback, useRef } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 //import QuillResizeImage from 'quill-resize-image';
-import ImageResize from 'quill-image-resize-custom-module'
-import uploadToCloudinary from "./upload";
+//import ImageResize from 'quill-image-resize-custom-module'
 
+import { ImageActions } from "@xeger/quill-image-actions";
+import { ImageFormats } from "@xeger/quill-image-formats";
+import uploadToCloudinary from "./upload";
 //const Quill = ReactQuill.Quill;
 
 // Custom Fonts
@@ -48,11 +50,12 @@ Quill.register(Size, true);
 
 // Resize Image
 //Quill.register("modules/resize", QuillResizeImage);
-Quill.register('modules/imageResize', ImageResize);
-
+//Quill.register('modules/imageResize', ImageResize);
+Quill.register("modules/imageActions", ImageActions);
+Quill.register("modules/imageFormats", ImageFormats);
 
 export const useRichText = () => {
-  const quillRef = useRef<ReactQuill>();  
+  const quillRef = useRef<ReactQuill>(null);  
   const imageHandler = useCallback(() => {
     
     const createFileInput = () => {
@@ -81,34 +84,38 @@ export const useRichText = () => {
     input.click();
   }, []);
   
-  const modules = {
+  const modules = {    
     toolbar: {
       container: [
         [{ header: [1, 2, 3, 4, 5, 6, false] }, { font: fontFamilies.sort() }],
         [{ size: fontSizeArr }],
         ["bold", "italic", "underline", "strike", "blockquote"],
         [{ color: [] }, { background: [] }],
+        [{ 'align': [] }],
         [
           { list: "ordered" },
           { list: "bullet" },
           { indent: "-1" },
           { indent: "+1" },
         ],
-        [
+        /* [
           { align: "" },
           { align: "center" },
           { align: "right" },
           { align: "justify" },
-        ],
+        ], */
         ["link", "image"],
         ["clean"],      
       ],
       //handlers: { image: imageHandler }, 
     },    
-    imageResize: {
+    imageActions: {},
+    imageFormats: {},
+/*    imageResize: {
       parchment: Quill.import('parchment'),
       modules: ['Resize', 'DisplaySize']
    },
+  */
     /* resize: {
 
       locale: {         
@@ -137,7 +144,13 @@ export const useRichText = () => {
     "bullet",
     "indent",
     "link",
-    "image",    
+    "image",
+    "align",
+    "alt",
+    "height",
+    "width",
+    "style",
+    "clean"
   ];
 
   return {
