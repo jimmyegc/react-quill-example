@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 // Quill
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -7,7 +7,7 @@ import "react-quill/dist/quill.snow.css";
 
 import { ImageActions } from "@xeger/quill-image-actions";
 import { ImageFormats } from "@xeger/quill-image-formats";
-//import uploadToCloudinary from "./upload";
+import { uploadToAWS } from "./upload";
 
 const Quill = ReactQuill.Quill;
 
@@ -57,7 +57,15 @@ Quill.register("modules/imageFormats", ImageFormats);
 
 export const useRichText = () => {
   const quillRef = useRef<ReactQuill>(null);  
-  /*const imageHandler = useCallback(() => {
+
+  const imageHandler = useCallback(() => {
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = reject;
+    });
     
     const createFileInput = () => {
       const input = document.createElement("input");
@@ -69,7 +77,8 @@ export const useRichText = () => {
     const handleFileChange= async (event: any) => {
       const file = event.target.files?.[0];
       if (file) {
-        const url = await uploadToCloudinary(file);
+        const result = await toBase64(file)
+        const url = await uploadToAWS(result);
         const quill = quillRef.current;
         if (quill) {
           const range = quill.getEditorSelection();
@@ -83,7 +92,7 @@ export const useRichText = () => {
     const input = createFileInput();
     input.addEventListener("change", handleFileChange);
     input.click();
-  }, []); */
+  }, []); 
   
   const modules = {    
     toolbar: {
@@ -108,7 +117,7 @@ export const useRichText = () => {
         ["link", "image"],
         ["clean"],      
       ],
-      //handlers: { image: imageHandler }, 
+      handlers: { image: imageHandler }, 
     },    
     imageActions: {},
     imageFormats: {},
