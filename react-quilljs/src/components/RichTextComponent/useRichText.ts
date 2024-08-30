@@ -78,7 +78,12 @@ export const useRichText = () => {
       const file = event.target.files?.[0];
       if (file) {
         const result = await toBase64(file)
-        const url = await uploadToAWS(result);
+        try {
+          const url = await uploadToAWS(result);
+        } catch(error) {
+          console.error(error);
+          return;
+       }        
         const quill = quillRef.current;
         if (quill) {
           const range = quill.getEditorSelection();

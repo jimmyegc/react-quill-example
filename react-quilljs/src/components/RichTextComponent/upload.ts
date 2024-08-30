@@ -11,7 +11,7 @@ const uploadToCloudinary = async (file: File): Promise<string> => {
   return url  
 }
 //https://lucidev.s3.amazonaws.com/b360ai/dev/1/config/f5e9576d-3e8d-4bc9-bf0a-e9fd84cc0892.png
-const uploadToAWS = async (file: File): Promise<string> => {  
+const uploadToAWS = async (file: string): Promise<string> => {  
   /*const formData = new FormData();
   formData.append("file", file);
   formData.append("enviroment", "dev");
@@ -25,7 +25,7 @@ const uploadToAWS = async (file: File): Promise<string> => {
     method: "POST",
     body: JSON.stringify(imageObj)
   }
-  const res = await fetch("https://fbozfitw4gsmeirrpywvvulb6u0jgwmj.lambda-url.us-east-1.on.aws/", req);
+  const res = await fetch("https://ffbozfitw4gsmeirrpywvvulb6u0jgwmj.lambda-url.us-east-1.on.aws/", req);
   const data = await res.json()
   console.log("response", data)
   const url = data.url
